@@ -1,0 +1,21 @@
+:root {
+    --bg-black-900: #2B2B2B;
+    --bg-white-500: #FFFFFF;
+    --skin-color: #C29D59;
+}
+
+/* Card.css */
+
+.dash-card-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* z-index: 1000; */
+    /* border: 1px solid red; */
+    top: 65px;
+    left: 270px;
+    right: 0;
+   
+
+}

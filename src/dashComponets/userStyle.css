@@ -1,0 +1,80 @@
+:root {
+    --bg-black-900: #2B2B2B;
+    --bg-white-500: #FFFFFF;
+    --skin-color: #C29D59;
+}
+
+.user-table {
+    /* position: absolute; */
+    position: absolute;
+        top: 65px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    margin-left: 272px;
+    /* border: 1px solid red; */
+    box-shadow: 1rem 1rem 1rem 1rem #ddd;
+}
+
+.user-table table
+{
+    
+    width: 100%;
+    border: 1px solid red;
+    border-collapse: collapse;
+    margin-left: auto;
+        margin-right: auto;
+  
+  
+}
+table,
+th,
+td {
+    border: 1px solid black;
+
+}
+
+.user-table  td
+{
+    margin-left: 100px;
+        margin-right: 100;
+}
+table {
+    width: 100%;
+    /* Make the table span the full width of its container */
+    border-collapse: collapse;
+    /* Collapse table borders into a single border */
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    /* Add borders to table headers and cells */
+    padding: 8px;
+    /* Add padding to headers and cells for spacing */
+    text-align: left;
+    /* Align text to the left within headers and cells */
+}
+
+th {
+    background-color: #f2f2f2;
+    /* Set a background color for table headers */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Add a background color to even rows */
+}
+td button
+{
+
+    background-color: var(--skin-color);
+    gap: 1rem;
+    margin-right: 20px;
+}
+td img
+{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100rem;
+}

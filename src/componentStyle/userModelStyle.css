@@ -1,0 +1,58 @@
+:root {
+    --bg-black-900: #2B2B2B;
+    --bg-white-500: #FFFFFF;
+    --skin-color: #C29D59;
+}
+.UserModel-container
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    /* justify-items: center; */
+    align-items: center;
+    margin:0rem;
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    background-color: rgba(0,0,0,0.4) ;
+    z-index: 1;
+
+}
+.sub-model
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 25em;
+    border-radius: 5px;
+    box-shadow: 3px 5px 1px 1px var(--bg-black-900);
+    background-color: var(--bg-white-500);
+
+}
+.sub-model button
+{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    background-color: var(--skin-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 5px 5px #ccc;
+}
+.userId,.userName,.userAge
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.sub-model span
+{
+    display: flex;
+    flex-direction: row;
+    
+}

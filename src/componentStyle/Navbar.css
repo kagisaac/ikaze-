@@ -1,0 +1,98 @@
+:root {
+    --bg-black-900: #2B2B2B;
+    --bg-white-500: #FFFFFF;  
+    --skin-color: #C29D59;
+}
+
+.nav-wrap
+{ 
+     top: 0;
+        right: 0;
+        left: 0;
+       
+    position: absolute;
+   display: flex;
+   flex-direction: column;
+   
+   
+}
+.navBar
+{
+    top: 0;
+    position:sticky;  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    /* background-color: red; */
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 0 20px 0 20px;
+    /* border:1px solid var(--skin-color) ; */
+    background-color: var(--bg-white-500);
+    box-shadow: 1px 1px 1px 1px var(--skin-color);
+  
+    
+}
+
+.navBar .navButton button
+{
+    
+    margin-left: 2rem;
+    color: var(--bg-white-500);
+    background-color: var(--skin-color);
+
+}
+.navBar .navButton  .search-icon
+{
+    background-color: var(--bg-white-500);
+    color: var(--bg-black-900);
+    border-radius: 1200px;
+    box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.5) ;
+    border: 2px solid var(--bg-black-900);
+}
+.navBar .navButton .humburger
+{
+border-radius: 1200px;
+border: 2px solid var(--skin-color);
+size: large;
+
+}
+.general-navBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 5rem;
+    background-color: var(--bg-black-900);
+    /* Set your preferred background color */
+    color: var(--skin-color);
+    /* Set the text color */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    /* padding: 5rem; */
+    align-items: center;
+    z-index: 100;
+}
+
+.contact-nav {
+    display: flex;
+    align-items: center;
+}
+
+.contact-nav p {
+    margin: 0 10px;
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links>* {
+    margin: 0 10px;
+}
