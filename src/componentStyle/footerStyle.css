@@ -47,6 +47,10 @@
     
 
 }
+.footer-navigation ul li:hover {
+    color: var(--skin-color);
+    text-decoration:line-through;
+}
 .footer-discription .input-box 
 {
      
@@ -158,4 +162,45 @@ background-color: var(--skin-color);
 .policy i
 {
     color: var(--skin-color);
+}
+
+@media (max-width: 768px)
+{
+.main-footer
+ {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    justify-items: start;
+
+}
+.footer-description,
+.footer-navigation,
+.footer-contact {
+    flex: 0;
+    text-align: start;
+    font-size:small;
+    gap: 0.1;
+    border: 1px solid red;
+    width: 100%;
+}
+.footer-navigation
+{
+    position:sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.footer-navigation ul
+{
+margin-left: 10px;
+list-style: none;
+
+}
+
+
+
+
 }

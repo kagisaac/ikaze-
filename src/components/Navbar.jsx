@@ -58,10 +58,10 @@ function Navbar() {
     <div className="navBar">
        {/* <header className={`site-header ${isStatic ? 'static-header' : ''}`}></header> */}
         <div  className="log">
-            <img style={{height: '90px'}} src="logo1.JPG" alt="" />
+            <img style={{height: '90px',width:"200px"}} src="logo1.JPG" alt="" />
         </div>
         <div className="navButton">
-            <button>RESERVE</button>
+            <button className='reserve'>RESERVE</button>
             <button className='search-icon'><AiOutlineSearch/></button>
              <button className='humburger' onClick={openModal}><BiMenuAltRight/></button>          
             

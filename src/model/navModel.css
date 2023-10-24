@@ -9,6 +9,7 @@
     
     inset: 0;
     background-color:var(--bg-black-900);
+    opacity: 98%;
     /* opacity: .8; */
     z-index: 10000;
     overflow: hidden;
@@ -25,9 +26,16 @@
       
        
 }
+.nav_modal_links li a:hover
+{
+color: var(--skin-color);
+    text-decoration: line-through;
+}
 
 .nav_modal_links
 {
+    position: absolute;
+   
 display: flex;
 flex-direction: column;
 
@@ -36,10 +44,11 @@ flex-direction: column;
     gap: 2rem;
    padding: 2rem;
     width: 60vh;
-    background-color: rgb(55, 41, 41);
+    background-color:rgb(27, 27, 27);
     color: var(--bg-white-500);
     text-decoration: none;
     list-style-type: none;
+    border-radius: 30px;
 }
 
 .nav_modal_links a

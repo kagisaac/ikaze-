@@ -50,7 +50,7 @@
     justify-content: center;
     align-items: center;
     gap: 0rem;
-    background-image: url("../assets/banner-slide-2.jpg");
+    background-image: url("../assets/banner-slide-1.jpg");
     background-size: cover;
     opacity: 90%;
     box-shadow: 1px 1px 1px 1px var(--bg-black-900);
@@ -140,6 +140,7 @@
                     background-color: var(--bg-white-500);
                     padding: 0.5rem;
                     border-radius: 0.5rem;
+                   
         
                     .container {
                         display: flex;

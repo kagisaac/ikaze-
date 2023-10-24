@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../componentStyle/cardStyle.css";
 import housePic from "../assets/houses.jpg";
 import mountain from "../assets/mountain.jpg";
@@ -14,56 +14,59 @@ import {
   Outlet,
   createRoutesFromElements,
 } from "react-router-dom";
-export const card_data = [
-  {
-    image: masdjid,
-    title: "Masdjid",
-    description:
-      "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
-  },
-  {
-    image: housePic,
-    title: "Italy",
-    description:
-      "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
-  },
-  {
-    image: sea,
-    title: "Sychell",
-    description:
-      "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
-  },
-  {
-    image:
-      "https://html.geekcodelab.com/holiday-planners/assets/images/banner-slide-1.jpg",
-    title: "Atlantic riem",
-    description:
-      "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
-  },
-  {
-    image: mountain,
-    title: "Everest",
-    description:
-      "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
-  },
-  {
-    image:
-      "https://html.geekcodelab.com/holiday-planners/assets/images/banner-slide-1.jpg",
-    title: "Atlantic riem",
-    description:
-      "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
-  },
-];
+import axios from "axios";
+import { mycontext } from "./context/ContextProvider";
+// export const card_data = [
+//   {
+//     image: masdjid,
+//     title: "Masdjid",
+//     description:
+//       "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
+//   },
+//   {
+//     image: housePic,
+//     title: "Italy",
+//     description:
+//       "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
+//   },
+//   {
+//     image: sea,
+//     title: "Sychell",
+//     description:
+//       "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
+//   },
+//   {
+//     image:
+//       "https://html.geekcodelab.com/holiday-planners/assets/images/banner-slide-1.jpg",
+//     title: "Atlantic riem",
+//     description:
+//       "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
+//   },
+//   {
+//     image: mountain,
+//     title: "Everest",
+//     description:
+//       "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
+//   },
+//   {
+//     image:
+//       "https://html.geekcodelab.com/holiday-planners/assets/images/banner-slide-1.jpg",
+//     title: "Atlantic riem",
+//     description:
+//       "Sit amet consectetur adipisicing elit. Perferendis sapiente tenetur officiis explicabo fugit, sit mollitia eum atque excepturi quaerat autem.",
+//   },
+// ];
 function Card() {
+const{card_data}=mycontext()
 
   return (
     <div className="card-container">
-      {card_data.map((card, index) => (
-        <div className="card" key={index}>
-          <img src={card.image} alt={card.title} />
+      {card_data.map((card) => (
+        <div className="card" >
+          <img src={card.backdropImage} alt={card.Title} />
           <div className="card-content">
-            <h2>{card.title}</h2>
-            <p>{card.description}</p>
+            <h2>{card.Title}</h2>
+            <p>{card.destination}</p>
             <div className="card-details">
               <div className="card-duration">
                 <label htmlFor="">Duration</label>

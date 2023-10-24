@@ -33,7 +33,7 @@
     padding: 5%;
     display: flex;
     flex-direction: row;
-    gap:2rem;
+    justify-content: space-between;
 
 }
 .login-section
@@ -96,8 +96,19 @@
 .login-annimation
 {
     /* border: 1px solid red; */
-    width: 100%;
+    width: 50%;
     background-image: url("../assets/loginImg3.jpg");
     background-size:cover;
     border-radius: 100px;
+
+}
+
+.sub-input-box input
+{
+    height: 1rem;
+}
+.sub-input-box
+{
+    border: 1px solid red;
+    width: fit-content;
 }

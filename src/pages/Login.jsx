@@ -46,7 +46,7 @@ const handleSubmit = async (e) => {
   console.log(input);
   try {
     const res = await axios.post(
-      "https://iwacu.onrender.com/api/v1/login",
+      "https://holiday-planner-4lnj.onrender.com/api/v1/auth/login",
       input
     );
     console.log(res.data);
@@ -104,7 +104,7 @@ const handleSubmit = async (e) => {
           </form>
 
           <div className="input-box-line">
-            <p>--------------or Login in with----------</p>
+            <p>-----or Login in with----</p>
           </div>
           <div className="other-login-button">
             <button>Google</button> <button>Facebook</button>

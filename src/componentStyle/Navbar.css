@@ -24,19 +24,27 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px var(--skin-color) ;
     z-index: 1000;
     /* background-color: red; */
     margin-top: 40px;
     margin-left: 100px;
     margin-right: 100px;
-    padding: 0 20px 0 20px;
+    /* padding: 0 20px 0 20px; */
     /* border:1px solid var(--skin-color) ; */
     background-color: var(--bg-white-500);
     box-shadow: 1px 1px 1px 1px var(--skin-color);
   
     
 }
+.navBar .log
+{
+    display: flex;
+    /* flex: 1; */
+    border: 1px solid red;
+    width: auto
+}
+
 
 .navBar .navButton button
 {
@@ -95,4 +103,20 @@ size: large;
 
 .social-links>* {
     margin: 0 10px;
+}
+@media (max-width: 768px) {
+    .general-navBar
+    {
+        display: none;
+    }
+    .navButton .reserve,.search-icon
+    {
+        display: none;
+    }
+    .navBar
+    {
+        top: 0;
+        width: 100%;
+        margin: 0;
+    }
 }

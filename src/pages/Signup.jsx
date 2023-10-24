@@ -18,11 +18,7 @@ import {
 function Signup() {
   const [input, setInput] = useState({
     firstName: "",
-    lastName: "",
-    gender: "",
-    nationality: "",
-    phone: "",
-    role: "",
+    
     email: "",
     password: "",
   });
@@ -35,7 +31,7 @@ function Signup() {
     console.log(input);
     try {
       const res = await axios.post(
-        "https://iwacu.onrender.com/api/v1/signup",
+        "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
         input
       );
       console.log(res.data);
@@ -63,9 +59,9 @@ function Signup() {
           </div>
           <form onSubmit={handleSubmit}>
 
-          <div className="sub-input-box">
+          
             <div className="input-box">
-              <label htmlFor="email-input">Fast Name</label>
+              <label htmlFor="email-input">Full Name</label>
               <input
                 type="text"
                 name="firstName"
@@ -74,83 +70,10 @@ function Signup() {
                 value={input.firstName}
                 />
             </div>
-            <div className="input-box">
-              <label htmlFor="email-input">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                onChange={handleChange}
-                value={input.lastName}
-                />
-            </div>
-          </div>
-          <div className="sub-input-box">
-            <div className="input-box">
-              <label htmlFor="email-input">Nationality</label>
-              <input
-                type="number "
-                name="nationality"
-                id="nationality"
-                onChange={handleChange}
-                value={input.nationality}
-              />
-            </div>
-            <div className="input-box">
-              <label htmlFor="email-input">Gender</label>
-              <input
-                type="text"
-                name="gender"
-                id="gender"
-                onChange={handleChange}
-                value={input.gender}
-                />
-            </div>
-          </div>
-          {/* <div className="sub-input-box">
-            <div className="input-box">
-            <label htmlFor="email-input">Address</label>
-            <input
-            type="text"
-                name="lastName"
-                id="lastName"
-                onChange={handleChange}
-                value={input.lastName}
-              />
-            </div>
-            <div className="input-box">
-            <label htmlFor="email-input">Nationality</label>
-              <input
-                type="text"
-                name="nationality"
-                id="nationality"
-                onChange={handleChange}
-                value={input.nationality}
-              />
-            </div>
-          </div> */}
-          <div className="sub-input-box">
-            <div className="input-box">
-              <label htmlFor="email-input">Phone</label>
-              <input
-                type="number"
-                name="phone"
-                id="phone"
-                onChange={handleChange}
-                value={input.phone}
-                />
-            </div>
-            <div className="input-box">
-              <label htmlFor="email-input">Role</label>
-              <input
-                type="text"
-                name="role"
-                id="role"
-                onChange={handleChange}
-                value={input.role}
-                />
-            </div>
-          </div>
+           
+          
+         
+         
           <div className="input-box">
             <label htmlFor="email-input">Email Address</label>
             <input
@@ -171,10 +94,7 @@ function Signup() {
               value={input.password}
               />
           </div>
-          <div className="input-box">
-            <label htmlFor="email-input">Confirm Password</label>
-            <input type="text" />
-          </div>
+         
           <div className="">
             <input type="checkbox" />
             <label htmlFor="email-input">Remember Me</label>

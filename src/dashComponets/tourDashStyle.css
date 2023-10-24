@@ -9,6 +9,7 @@
 .dash-card-container {
     position: absolute;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     /* z-index: 1000; */
@@ -18,4 +19,24 @@
     right: 0;
    
 
+}
+.add-tour-btn 
+{
+    display: flex;
+    justify-content: end;
+
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+ 
+}
+.add-tour-btn button
+{
+    background-color: var(--skin-color);
+}
+.tour-data
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

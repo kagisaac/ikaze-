@@ -21,7 +21,7 @@ import {
   Outlet,
   createRoutesFromElements,
 } from "react-router-dom";
-import Card, { card_data } from "./components/Card";
+import Card from "./components/Card";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Tours from "./pages/Tours";
@@ -31,6 +31,7 @@ import DashSideBar from "./components/DashSideBar"
 import DashNavBar from "./components/DashNavBar"
 import TourDash from "./dashComponets/TourDash"
 import Users from "./dashComponets/Users"
+import { AppProvider } from "./components/context/ContextProvider";
 const DashLayout= ()=>{
   return (
     <>
@@ -55,24 +56,26 @@ const AppLayout = () => {
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route index element={<HomeSite />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/tour" element={<Tours />} />
-            <Route path="/Tour_single" element={<Tour_single />} />
-          </Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+      <AppProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<AppLayout />}>
+              <Route index element={<HomeSite />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/tour" element={<Tours />} />
+              <Route path="/Tour_single" element={<Tour_single />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
 
-          <Route element={<DashLayout />}>
-            <Route index path="/dash/" element={<Dashboard />} />
-            <Route path="tour-dash" element={<TourDash />} />
-            <Route path="users-dash" element={<Users />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            <Route element={<DashLayout />}>
+              <Route index path="/dash/" element={<Dashboard />} />
+              <Route path="tour-dash" element={<TourDash />} />
+              <Route path="users-dash" element={<Users />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AppProvider>
     </>
   );
 }
