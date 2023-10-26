@@ -182,7 +182,7 @@ background-color: var(--skin-color);
     text-align: start;
     font-size:small;
     gap: 0.1;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;
 }
 .footer-navigation

@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useContext } from "react";
-import { json, useNavigate } from "react-router-dom";
+import React from 'react'
+ import { useForm } from "react-hook-form";
+function CardEditModel() {
+ 
 
 
-import { useForm } from "react-hook-form";
-
-function TourModel({ isOpen, isClosed }) {
   const {
     register,
     handleSubmit,
@@ -23,7 +20,7 @@ function TourModel({ isOpen, isClosed }) {
 
     try {
       const res = await axios.post(
-        "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
+        "https://holiday-planner-4lnj.onrender.com/api/v1/tour/update",
         formData,
         {
           headers: {
@@ -33,28 +30,29 @@ function TourModel({ isOpen, isClosed }) {
       );
       if(res.data)
       {
-        console.log('Tour created:', res.data);
+        console.log('Tour Updated succefully:', res.data);
       }
     } catch (error) {
       console.error(error)
     }
   };
-  if (!isOpen) return null;
+  
   return (
     <>
       <div className="UserModel-container">
         <div className="sub-model">
           <h3 style={{ display: "flex", justifyContent: "center" }}>
-            Add New Tour
+            Edit the tour
           </h3>
-          <form onSubmit={handleSubmit(onsubmit)}>
+          <form>
             <div className="userId">
-              <label htmlFor="">Destination name </label>
+              <label htmlFor="">Destination </label>
               <input
                 type="text"
                 name="destination"
                 placeholder="destination"
-                {...register("destination", { required: true })}
+                
+                // {...register("destination", { required: true })}
               />
               {/* {error.destination && <p>Tour name is required</p>} */}
             </div>
@@ -64,16 +62,16 @@ function TourModel({ isOpen, isClosed }) {
                 type="text"
                 name="title"
                 placeholder="Title"
-                {...register("title", { required: true })}
+                // {...register("title", { required: true })}
               />
               {/* {error.title && <p>Tour Title is required</p>} */}
             </div>
             <div className="userAge">
-              <label htmlFor="">Image </label>
+              <label htmlFor="">Image  </label>
               <input
                 type="file"
                 name="image"
-                {...register("image", { required: true })}
+                // {...register("image", { required: true })}
               />
               {/* {error.title && <p>Tour imagae is required</p>} */}
             </div>
@@ -82,12 +80,12 @@ function TourModel({ isOpen, isClosed }) {
               <input
                 type="file"
                 name="Gallery"
-                {...register("Gallery", { required: true })}
+                // {...register("Gallery", { required: true })}
               />
               {/* {error.Gallery && <p>Tour Gallery is required</p>} */}
             </div>
             <span>
-              <button>Cancel</button>
+              <button type="submit">Cancel</button>
               <button type="submit">Submit</button>
             </span>
           </form>
@@ -97,4 +95,5 @@ function TourModel({ isOpen, isClosed }) {
   );
 }
 
-export default TourModel;
+export default CardEditModel
+

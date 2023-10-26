@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../componentStyle/cardStyle.css";
 import housePic from "../assets/houses.jpg";
 import mountain from "../assets/mountain.jpg";
@@ -8,17 +8,71 @@ import masdjid from "../assets/masdjid.jpg";
 import "../dashComponets/tourDashStyle.css";
 import { mycontext } from "../components/context/ContextProvider";
 import TourModel from "../model/TourModel";
+import UserModel from "../model/UserModel";
+import axios from "axios";
+import Notiflix from "notiflix";
+import CardEditModel from "../model/CardEditModel";
 function TourDash() {
   const { card_data } = mycontext();
+ 
 
   console.log(card_data);
   const [isModalOpen, setModalOpen] = React.useState(false);
+  const [isEditModalOpen, SetisEditModalOpen] = React.useState(false);
+  const [Selecteditem, SetSelecteditem] = useState(null);
+  
   const openModal = () => setModalOpen(true);
+  const [tourToEdit, setTourToEdit] = useState();
+console.log(tourToEdit);
+ const handleEditCard =async(item)=>
+{
+   SetSelecteditem(() => item);
+  SetisEditModalOpen(tr)
+}
   const closeModal = () => setModalOpen(false);
+  const [tourToDelete, setTourToDelete] = useState(null);
+  const [showDeletionConfirm, setShowDeletionConfirm] = useState(false);
+
+  const handleConfirmDelete = async (_id) => {
+    try {
+      Notiflix.Confirm.show(
+        "Confirm delete tour",
+        "Do you agree with me?",
+        "Yes",
+        "No",
+        async () => {
+          const res = await axios.delete(
+            `https://holiday-planner-4lnj.onrender.com/api/v1/tour/delete/${_id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          );
+          window.location.reload();
+        },
+        () => {
+          alert("If you say so...");
+        },
+        {}
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleDeleteClick = (card_data) => {
+    handleConfirmDelete();
+    // setShowDeleteConfirm(true);
+  };
+  const handleCancelDelete = () => {
+    setShowDeletionConfirm(false);
+  };
 
   return (
     <>
+      <UserModel isOpen={isEditModalOpen} />
       <TourModel isOpen={isModalOpen} />
+      {isEditModalOpen && <CardEditModel/>}
       <div className="dash-card-container">
         <div className="add-tour-btn">
           <button onClick={openModal}>Add New</button>
@@ -45,13 +99,35 @@ function TourDash() {
                     <h3>$1200</h3>
                   </div>
                   <div className="card-button">
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button
+                      onClick={() => {
+                        SetisEditModalOpen(true);
+                        setTourToEdit(card);
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onch
+                      onClick={() => {
+                        setTourToDelete(card);
+                        handleConfirmDelete(card._id);
+                      }}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           ))}
+          {showDeletionConfirm && (
+            <div className="popup">
+              <p>Are you sure you want to delete {tourToDelete._id}?</p>
+              <button onClick={handleConfirmDelete}>OK</button>
+              <button onClick={handleCancelDelete}>Cancel</button> 
+            </div>
+          )}
         </div>
       </div>
     </>

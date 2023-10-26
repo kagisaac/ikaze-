@@ -29,7 +29,7 @@ function HomeSite() {
             </div>
           </div>
 
-          <div className="search">
+          <div className="search search-container">
             <div className="container">
               <label htmlFor="">Where To? </label>
               <input type="text" placeholder="Search Your location" />
@@ -56,7 +56,7 @@ function HomeSite() {
           <div className="about-section ">
             <div className="about-pic">
               <img
-                style={{ width: "70vh", height: "50vh" }}
+                style={{ width: "100%", height: "50vh" }}
                 src={travel_img}
                 alt=""
               />
@@ -79,7 +79,10 @@ function HomeSite() {
               <button className="readMore-button">READ MORE</button>
             </div>
           </div>
+          <div className='card-section'>
+
           <Card />
+          </div>
         </div>
       </div>
     </>

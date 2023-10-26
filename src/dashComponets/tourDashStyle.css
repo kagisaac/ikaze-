@@ -40,3 +40,10 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+@media (max-width: 768px)
+{
+    .dash-card-container
+    {
+        left: 181px
+    }
+}

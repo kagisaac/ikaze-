@@ -56,3 +56,8 @@
     flex-direction: row;
     
 }
+input
+{
+    box-shadow: 1px 4px 10px #ccc;
+    border: 1px solid black;
+}

@@ -10,6 +10,8 @@
     right: 0;
     left: 0;
     bottom: 0;
-    margin-left: 270px;
+    margin-left: 271px;
     /* border:1px  solid red ; */
+    /* background-image: url("../assets/loginBg.jpg"); */
+    /* background-color: var(--bg-white-500); */
 }

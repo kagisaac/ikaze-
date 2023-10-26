@@ -41,7 +41,7 @@ function UserModel({isOpen,isClosed}) {
               <input type="text" name="age"  value={formState.age} onChange={handleChange}/>
             </div>
             <span>
-              <button type="submit">Cancel</button>
+              <button >Cancel</button>
               <button type="submit" onClick={handleSubmit}>Submit</button>
             </span>
           </form>

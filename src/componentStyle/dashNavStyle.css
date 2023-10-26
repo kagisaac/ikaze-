@@ -48,3 +48,10 @@ display: flex;
 
 
 }
+@media (max-width: 768px)
+{
+  .dash-nav
+  {
+    left: 171px;
+  }
+}
