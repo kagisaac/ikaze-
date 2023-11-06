@@ -12,6 +12,7 @@
         left: 0;
         bottom: 0;
     margin-left: 272px;
+    padding: 100px;
     /* border: 1px solid red; */
     box-shadow: 1rem 1rem 1rem 1rem #ddd;
 }
@@ -24,7 +25,7 @@
     border-collapse: collapse;
     margin-left: auto;
         margin-right: auto;
-  
+       
   
 }
 table,

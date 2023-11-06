@@ -75,6 +75,18 @@
         width: 100px;
 
 }
+.icons-item h5
+{
+ color: var(--bg-black-900);
+}
+.icons-item h5:hover {
+    color: var(--skin-color);
+    text-decoration:line-through;
+    font-size:small;
+}
+.icons-item  {
+    color: var(--skin-color);
+}
 
 @media (max-width: 768px)
 {

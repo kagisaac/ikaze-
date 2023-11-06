@@ -49,12 +49,12 @@ function TourModel({ isOpen, isClosed }) {
           </h3>
           <form onSubmit={handleSubmit(onsubmit)}>
             <div className="userId">
-              <label htmlFor="">Destination name </label>
+              <label htmlFor="">Description  </label>
               <input
                 type="text"
-                name="destination"
-                placeholder="destination"
-                {...register("destination", { required: true })}
+                name="Description"
+                placeholder="Description"
+                {...register("Description", { required: true })}
               />
               {/* {error.destination && <p>Tour name is required</p>} */}
             </div>

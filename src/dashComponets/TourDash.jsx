@@ -12,23 +12,27 @@ import UserModel from "../model/UserModel";
 import axios from "axios";
 import Notiflix from "notiflix";
 import CardEditModel from "../model/CardEditModel";
+
+
+export const Edit = (card)=>{
+
+}
 function TourDash() {
   const { card_data } = mycontext();
- 
 
   console.log(card_data);
   const [isModalOpen, setModalOpen] = React.useState(false);
   const [isEditModalOpen, SetisEditModalOpen] = React.useState(false);
   const [Selecteditem, SetSelecteditem] = useState(null);
-  
+
+  const handleEditCard = (card) => {
+     SetSelecteditem(() => card);
+     SetisEditModalOpen(true);
+     console.log("selected :" + {card});
+   };
   const openModal = () => setModalOpen(true);
   const [tourToEdit, setTourToEdit] = useState();
-console.log(tourToEdit);
- const handleEditCard =async(item)=>
-{
-   SetSelecteditem(() => item);
-  SetisEditModalOpen(tr)
-}
+  console.log(tourToEdit);
   const closeModal = () => setModalOpen(false);
   const [tourToDelete, setTourToDelete] = useState(null);
   const [showDeletionConfirm, setShowDeletionConfirm] = useState(false);
@@ -72,7 +76,7 @@ console.log(tourToEdit);
     <>
       <UserModel isOpen={isEditModalOpen} />
       <TourModel isOpen={isModalOpen} />
-      {isEditModalOpen && <CardEditModel/>}
+      {isEditModalOpen && <CardEditModel tour={Selecteditem} />}
       <div className="dash-card-container">
         <div className="add-tour-btn">
           <button onClick={openModal}>Add New</button>
@@ -83,7 +87,7 @@ console.log(tourToEdit);
               <img src={card.backdropImage} alt={card.Title} />
               <div className="card-content">
                 <h2>{card.Title}</h2>
-                <p>{card.Title}</p>
+                <p>{card.Description}</p>
                 <div className="card-details">
                   <div className="card-duration">
                     <label htmlFor="">Duration</label>
@@ -101,8 +105,8 @@ console.log(tourToEdit);
                   <div className="card-button">
                     <button
                       onClick={() => {
-                        SetisEditModalOpen(true);
-                        setTourToEdit(card);
+                        handleEditCard(card);
+                        // console.log("selected :" + card._id);
                       }}
                     >
                       Edit

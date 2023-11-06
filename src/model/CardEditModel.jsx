@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from "axios";
  import { useForm } from "react-hook-form";
-function CardEditModel() {
- 
+
+function CardEditModel({tour}) {
+ console.log(tour);
 
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { error },
-  } = useForm();
+  } = useForm({
+     ...tour
+  });
 
 
   const onsubmit = async (data) => {
@@ -19,8 +24,8 @@ function CardEditModel() {
     formData.append("Gallery", data.Gallery[0]);
 
     try {
-      const res = await axios.post(
-        "https://holiday-planner-4lnj.onrender.com/api/v1/tour/update",
+      const res = await axios.put(
+        "https://holiday-planner-4lnj.onrender.com/api/v1/tour/update/"+tour._id,
         formData,
         {
           headers: {
@@ -36,6 +41,10 @@ function CardEditModel() {
       console.error(error)
     }
   };
+
+  useEffect(()=>{
+   reset(tour)
+  },[tour])
   
   return (
     <>
@@ -44,15 +53,16 @@ function CardEditModel() {
           <h3 style={{ display: "flex", justifyContent: "center" }}>
             Edit the tour
           </h3>
-          <form>
+          <form onSubmit={handleSubmit(onsubmit)}>
             <div className="userId">
               <label htmlFor="">Destination </label>
               <input
                 type="text"
                 name="destination"
-                placeholder="destination"
+                // placeholder={tour.data.title}
+              
                 
-                // {...register("destination", { required: true })}
+                 {...register("destination", { required: true })}
               />
               {/* {error.destination && <p>Tour name is required</p>} */}
             </div>
@@ -62,7 +72,7 @@ function CardEditModel() {
                 type="text"
                 name="title"
                 placeholder="Title"
-                // {...register("title", { required: true })}
+                 {...register("Title", { required: true })}
               />
               {/* {error.title && <p>Tour Title is required</p>} */}
             </div>
@@ -71,7 +81,7 @@ function CardEditModel() {
               <input
                 type="file"
                 name="image"
-                // {...register("image", { required: true })}
+                 {...register("image", { required: true })}
               />
               {/* {error.title && <p>Tour imagae is required</p>} */}
             </div>
@@ -80,7 +90,7 @@ function CardEditModel() {
               <input
                 type="file"
                 name="Gallery"
-                // {...register("Gallery", { required: true })}
+                 {...register("Gallery", { required: true })}
               />
               {/* {error.Gallery && <p>Tour Gallery is required</p>} */}
             </div>
