@@ -13,7 +13,7 @@ function Footer() {
                 <div className='input-box'><input type="email" placeholder='Enter Your Email' /> <button >SUBMIT</button></div>
             </div>
             <div className="footer-navigation">
-                <h2>Navigation</h2>
+                <h2>Navigation</h2>|
                 <ul>
                     <li>Home</li>
                     <li>About</li>

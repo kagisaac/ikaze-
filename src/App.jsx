@@ -37,6 +37,7 @@ import DashNavBar from "./components/DashNavBar";
 import TourDash from "./dashComponets/TourDash";
 import Users from "./dashComponets/Users";
 import { AppProvider } from "./components/context/ContextProvider";
+import Message from "./dashComponets/Message";
 const DashLayout = () => {
   return (
     <>
@@ -96,6 +97,7 @@ function App() {
                 <Route index path="/dash/" element={<Dashboard />} />
                 <Route path="tour-dash" element={<TourDash />} />
                 <Route path="users-dash" element={<Users />} />
+                <Route path="message-dash" element={<Message />} />
               </Route>
             </Routes>
           </BrowserRouter>

@@ -4,15 +4,19 @@ import "../dashComponets/userStyle.css";
 import UserModel from "../model/UserModel";
 import { mycontext } from "../components/context/ContextProvider";
 
-function Users() {
-  const { card_data, userData, user_data } = mycontext();
+function Message() {
+  const { card_data, userData, user_data, contact_data, message } = mycontext();
+//   console.log(message);
   const handelDeletRow = (targetindex) => {
     setUserData(userData.filter((_, idx) => idx !== targetindex));
   };
-  const[isModalOpen, setModalOpen]= React.useState(false);
-  const openModal=()=>setModalOpen(true);
-  const closeModal=()=> setModalOpen(false); 
-console.log(user_data);
+  const [isModalOpen, setModalOpen] = React.useState(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+  console.log(user_data);
+  console.log(contact_data);
+
+ 
 
   return (
     <>
@@ -29,14 +33,14 @@ console.log(user_data);
             </tr>
           </thead>
           <tbody>
-            {user_data.map((user) => (
+            {message.map((user) => (
               <tr key={user.id}>
                 <td>
                   <img src={pic} alt="" />
                 </td>
                 <td>{user.fullName}</td>
                 <td>{user.email}</td>
-                <td>{user.role}</td>
+                <td>{user.message}</td>
                 <td>
                   <button onClick={openModal}>Edit</button>
                   <button onClick={() => handelDeletRow(index)}>Delete</button>
@@ -50,4 +54,4 @@ console.log(user_data);
   );
 }
 
-export default Users;
+export default Message;

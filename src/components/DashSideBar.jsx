@@ -25,7 +25,7 @@ function DashSideBar() {
           <img src={pic} alt="" />
         </div>
         <div className="profile-name">
-          <h2>{usersDatas?.user.email.slice(0,5)}</h2>
+          <h2>{usersDatas?.user.email.slice(0, 5)}</h2>
           <p>{usersDatas?.user.role}</p>
         </div>
       </div>
@@ -59,6 +59,14 @@ function DashSideBar() {
             <BiSolidPlaneAlt />
             <Link to="users-dash">
               <h5>User</h5>
+            </Link>
+          </div>
+        </div>
+        <div className="sidebar-single-items">
+          <div className="icons-item">
+            <BiSolidPlaneAlt />
+            <Link to="message-dash">
+              <h5>Message</h5>
             </Link>
           </div>
         </div>
